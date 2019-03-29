@@ -540,4 +540,8 @@ Wire Wire Line
 	6400 3650 6400 3750
 Wire Wire Line
 	6400 3750 7100 3750
+Text Notes 8550 3800 0    50   Italic 10
+Errata: LED data line is PC1, not PD6
+Text Notes 8550 3500 0    50   Italic 10
+Errata: PWR_LED_DISABLE should be moved to a\npin that supports hardware PWM
 $EndSCHEMATC

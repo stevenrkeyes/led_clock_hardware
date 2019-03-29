@@ -280,4 +280,6 @@ Text Notes 7550 7200 0    200  ~ 40
 USB Serial
 Wire Wire Line
 	8800 4200 8800 4250
+Text Notes 6750 2650 0    50   Italic 10
+Errata: This component has several pins incorrect, perhaps\ndue to changes between KiCad 4 and 5.\nIt can be made operational by cutting certain pins, bridging\ncertain pads, and changing the CBUS configuration using\nthe FTDI utility software.
 $EndSCHEMATC

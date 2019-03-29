@@ -753,4 +753,14 @@ Wire Wire Line
 	6300 6100 6300 6150
 Wire Wire Line
 	4750 1650 4750 2650
+Text Notes 5800 900  0    50   Italic 10
+Errata: MISO and MOSI are flipped somewhere\nalong this line
+Text Notes 5800 1300 0    50   Italic 10
+Errata: I was not able to program the microcontroller\nthrough this header (had to solder on an\nalready-programmed microcontroller); I think a level\nshifter is necessary
+Text Notes 1300 2200 0    50   Italic 10
+Errata: USB current should probably be limited to\nmuch less; 2.0A is typically for an entire hub, not\na single port.
+Text Notes 1300 2500 0    50   Italic 10
+Errata: USB was unrelable across different USB cables.\nVBUS capacitance or inrush may be out of spec, and data\nlines should be impedance controlled. 
+Text Notes 1950 3700 0    50   Italic 10
+Errata: perhaps worth adding\nESD protection
 $EndSCHEMATC
