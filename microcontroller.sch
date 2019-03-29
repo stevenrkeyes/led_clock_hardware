@@ -1,0 +1,543 @@
+EESchema Schematic File Version 4
+LIBS:led_clock-cache
+EELAYER 26 0
+EELAYER END
+$Descr A 11000 8500
+encoding utf-8
+Sheet 4 18
+Title "LED Mandala Clock"
+Date ""
+Rev "0.1"
+Comp "Drawn by: Steven Keyes"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text HLabel 7800 4050 2    50   Input ~ 0
+~MICRO_RESET~
+Text HLabel 7800 3750 2    50   Output ~ 0
+LED_DATA
+Text HLabel 7800 3950 2    50   Output ~ 0
+RTC_SCL
+Text HLabel 7800 3850 2    50   BiDi ~ 0
+RTC_SDA
+Text Notes 8550 3950 0    50   ~ 0
+Note: Use internal pullups for I2C
+Text HLabel 7800 4700 2    50   Output ~ 0
+MICRO_TO_USB
+Text HLabel 7800 4350 2    50   Input ~ 0
+USB_TO_MICRO
+Text HLabel 7800 3550 2    50   Output ~ 0
+PWR_LED_DISABLE
+Wire Wire Line
+	6300 4050 7800 4050
+Wire Wire Line
+	6300 3850 7800 3850
+Wire Wire Line
+	7800 3950 6300 3950
+Wire Wire Line
+	7100 4350 7800 4350
+Wire Wire Line
+	7800 4700 7100 4700
+Wire Wire Line
+	6600 3450 6300 3450
+Wire Wire Line
+	6600 3450 6600 3550
+Wire Wire Line
+	6600 3550 7800 3550
+$Comp
+L MCU_Microchip_ATmega:ATmega328P-AU U4
+U 1 1 5C0858C4
+P 5700 3750
+F 0 "U4" H 5700 1950 50  0000 C CNN
+F 1 "ATmega328P-AU" H 5700 1850 50  0000 C CNN
+F 2 "Package_QFP:TQFP-32_7x7mm_P0.8mm" H 5700 3750 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/ATmega328_P%20AVR%20MCU%20with%20picoPower%20Technology%20Data%20Sheet%2040001984A.pdf" H 5700 3750 50  0001 C CNN
+	1    5700 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L led_clock_custom_parts:VDD_MICRO_3V2 #PWR040
+U 1 1 5C08692E
+P 5750 2150
+F 0 "#PWR040" H 5750 2000 50  0001 C CNN
+F 1 "VDD_MICRO_3V2" H 5750 2324 50  0000 C CNN
+F 2 "" H 5750 2150 50  0000 C CNN
+F 3 "" H 5750 2150 50  0000 C CNN
+	1    5750 2150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5700 2250 5700 2200
+Wire Wire Line
+	5700 2200 5750 2200
+Wire Wire Line
+	5800 2200 5800 2250
+Wire Wire Line
+	5750 2200 5750 2150
+Connection ~ 5750 2200
+Wire Wire Line
+	5750 2200 5800 2200
+$Comp
+L Device:CP1 C7
+U 1 1 5C0882D0
+P 1800 2300
+F 0 "C7" H 1950 2350 50  0000 L CNN
+F 1 "4.7uF Tantalum" H 1950 2250 50  0000 L CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric" H 1800 2300 50  0001 C CNN
+F 3 "~" H 1800 2300 50  0001 C CNN
+F 4 "TAJA475K010TNJ" H 1950 2150 50  0000 L CNN "PN"
+	1    1800 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C9
+U 1 1 5C088416
+P 3350 2300
+F 0 "C9" H 3465 2346 50  0000 L CNN
+F 1 "1uF" H 3465 2255 50  0000 L CNN
+F 2 "led_clock_custom_parts:C_0402_1005Metric_HandSoldering" H 3388 2150 50  0001 C CNN
+F 3 "~" H 3350 2300 50  0001 C CNN
+	1    3350 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C8
+U 1 1 5C0885FB
+P 2700 2300
+F 0 "C8" H 2815 2346 50  0000 L CNN
+F 1 "1uF" H 2815 2255 50  0000 L CNN
+F 2 "led_clock_custom_parts:C_0402_1005Metric_HandSoldering" H 2738 2150 50  0001 C CNN
+F 3 "~" H 2700 2300 50  0001 C CNN
+	1    2700 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR042
+U 1 1 5C08A00A
+P 2700 2500
+F 0 "#PWR042" H 2700 2250 50  0001 C CNN
+F 1 "GND" H 2700 2350 50  0000 C CNN
+F 2 "" H 2700 2500 50  0000 C CNN
+F 3 "" H 2700 2500 50  0000 C CNN
+	1    2700 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR043
+U 1 1 5C08A03B
+P 3350 2500
+F 0 "#PWR043" H 3350 2250 50  0001 C CNN
+F 1 "GND" H 3350 2350 50  0000 C CNN
+F 2 "" H 3350 2500 50  0000 C CNN
+F 3 "" H 3350 2500 50  0000 C CNN
+	1    3350 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR041
+U 1 1 5C08A06C
+P 1800 2500
+F 0 "#PWR041" H 1800 2250 50  0001 C CNN
+F 1 "GND" H 1800 2350 50  0000 C CNN
+F 2 "" H 1800 2500 50  0000 C CNN
+F 3 "" H 1800 2500 50  0000 C CNN
+	1    1800 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L led_clock_custom_parts:VDD_MICRO_3V2 #PWR037
+U 1 1 5C08A09D
+P 1800 2100
+F 0 "#PWR037" H 1800 1950 50  0001 C CNN
+F 1 "VDD_MICRO_3V2" H 1800 2274 50  0000 C CNN
+F 2 "" H 1800 2100 50  0000 C CNN
+F 3 "" H 1800 2100 50  0000 C CNN
+	1    1800 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L led_clock_custom_parts:VDD_MICRO_3V2 #PWR038
+U 1 1 5C08A0CE
+P 2700 2100
+F 0 "#PWR038" H 2700 1950 50  0001 C CNN
+F 1 "VDD_MICRO_3V2" H 2700 2274 50  0000 C CNN
+F 2 "" H 2700 2100 50  0000 C CNN
+F 3 "" H 2700 2100 50  0000 C CNN
+	1    2700 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L led_clock_custom_parts:VDD_MICRO_3V2 #PWR039
+U 1 1 5C08A0FF
+P 3350 2100
+F 0 "#PWR039" H 3350 1950 50  0001 C CNN
+F 1 "VDD_MICRO_3V2" H 3350 2274 50  0000 C CNN
+F 2 "" H 3350 2100 50  0000 C CNN
+F 3 "" H 3350 2100 50  0000 C CNN
+	1    3350 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C10
+U 1 1 5C08A1C8
+P 4500 2700
+F 0 "C10" H 4615 2746 50  0000 L CNN
+F 1 "100nF" H 4615 2655 50  0000 L CNN
+F 2 "led_clock_custom_parts:C_0402_1005Metric_HandSoldering" H 4538 2550 50  0001 C CNN
+F 3 "~" H 4500 2700 50  0001 C CNN
+	1    4500 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5100 2850 5000 2850
+Wire Wire Line
+	5100 2750 4900 2750
+Wire Wire Line
+	4500 2550 5100 2550
+$Comp
+L power:GND #PWR044
+U 1 1 5C08ECFC
+P 4500 2900
+F 0 "#PWR044" H 4500 2650 50  0001 C CNN
+F 1 "GND" H 4500 2750 50  0000 C CNN
+F 2 "" H 4500 2900 50  0000 C CNN
+F 3 "" H 4500 2900 50  0000 C CNN
+	1    4500 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP10
+U 1 1 5C091110
+P 3250 4100
+F 0 "TP10" H 3308 4220 50  0000 L CNN
+F 1 "TestPoint" H 3308 4129 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_D2.5mm" H 3450 4100 50  0001 C CNN
+F 3 "~" H 3450 4100 50  0001 C CNN
+	1    3250 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP11
+U 1 1 5C091198
+P 3250 5500
+F 0 "TP11" H 3308 5620 50  0000 L CNN
+F 1 "TestPoint" H 3308 5529 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_D2.5mm" H 3450 5500 50  0001 C CNN
+F 3 "~" H 3450 5500 50  0001 C CNN
+	1    3250 5500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4500 2850 4500 2900
+Wire Wire Line
+	3350 2450 3350 2500
+Wire Wire Line
+	2700 2450 2700 2500
+Wire Wire Line
+	1800 2450 1800 2500
+Wire Wire Line
+	1800 2100 1800 2150
+Wire Wire Line
+	2700 2100 2700 2150
+Wire Wire Line
+	3350 2100 3350 2150
+Text Label 4200 4100 0    50   ~ 0
+ADC6_VEXT_MEAS
+Text Label 4250 5500 0    50   ~ 0
+ADC7_VUSB_MEAS
+$Comp
+L Connector:TestPoint TP8
+U 1 1 5C0A504B
+P 6650 2550
+F 0 "TP8" H 6708 2670 50  0000 L CNN
+F 1 "TestPoint" H 6708 2579 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_D2.5mm" H 6850 2550 50  0001 C CNN
+F 3 "~" H 6850 2550 50  0001 C CNN
+	1    6650 2550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Resonator Y1
+U 1 1 5C0A5CD4
+P 7750 3300
+F 0 "Y1" V 7850 3400 50  0000 L CNN
+F 1 "16MHz" V 7750 3400 50  0000 L CNN
+F 2 "Crystal:Resonator_SMD_muRata_CSTxExxV-3Pin_3.0x1.1mm_HandSoldering" H 7725 3300 50  0001 C CNN
+F 3 "~" H 7725 3300 50  0001 C CNN
+F 4 "CSTNE16M0V53C000R0" V 7650 3400 50  0000 L CNN "PN"
+	1    7750 3300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR045
+U 1 1 5C0A7514
+P 8100 3300
+F 0 "#PWR045" H 8100 3050 50  0001 C CNN
+F 1 "GND" H 8105 3127 50  0000 C CNN
+F 2 "" H 8100 3300 50  0001 C CNN
+F 3 "" H 8100 3300 50  0001 C CNN
+	1    8100 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R9
+U 1 1 5C0AABD2
+P 6950 4350
+F 0 "R9" V 6745 4350 50  0000 C CNN
+F 1 "1k" V 6836 4350 50  0000 C CNN
+F 2 "led_clock_custom_parts:R_0402_1005Metric_HandSoldering" V 6990 4340 50  0001 C CNN
+F 3 "~" H 6950 4350 50  0001 C CNN
+	1    6950 4350
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_US R10
+U 1 1 5C0AAD57
+P 6950 4700
+F 0 "R10" V 6745 4700 50  0000 C CNN
+F 1 "1k" V 6836 4700 50  0000 C CNN
+F 2 "led_clock_custom_parts:R_0402_1005Metric_HandSoldering" V 6990 4690 50  0001 C CNN
+F 3 "~" H 6950 4700 50  0001 C CNN
+	1    6950 4700
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6300 4350 6500 4350
+Wire Wire Line
+	6500 4350 6500 4700
+Wire Wire Line
+	6500 4700 6800 4700
+$Comp
+L Device:Jumper JP2
+U 1 1 5C0AE7AB
+P 7400 3750
+F 0 "JP2" H 7400 4014 50  0000 C CNN
+F 1 "Jumper" H 7400 3923 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7400 3750 50  0001 C CNN
+F 3 "~" H 7400 3750 50  0001 C CNN
+	1    7400 3750
+	1    0    0    -1  
+$EndComp
+Text Label 6500 3750 0    50   ~ 0
+LED_DATA_PD6
+Wire Wire Line
+	7800 3750 7700 3750
+$Comp
+L power:GND #PWR049
+U 1 1 5C0B7292
+P 5700 5300
+F 0 "#PWR049" H 5700 5050 50  0001 C CNN
+F 1 "GND" H 5700 5150 50  0000 C CNN
+F 2 "" H 5700 5300 50  0000 C CNN
+F 3 "" H 5700 5300 50  0000 C CNN
+	1    5700 5300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5700 5300 5700 5250
+Text HLabel 7800 2950 2    50   Input ~ 0
+PROG_MISO
+Text HLabel 7800 2850 2    50   Output ~ 0
+PROG_MOSI
+Text HLabel 7800 3050 2    50   Input ~ 0
+PROG_SCK
+Wire Wire Line
+	6700 3250 6700 3450
+Wire Wire Line
+	6300 3250 6700 3250
+Wire Wire Line
+	6300 3050 7800 3050
+Wire Wire Line
+	7800 2950 6300 2950
+Wire Wire Line
+	7800 2850 6300 2850
+$Comp
+L Connector:TestPoint TP9
+U 1 1 5C11587B
+P 7650 2550
+F 0 "TP9" H 7708 2670 50  0000 L CNN
+F 1 "TestPoint" H 7708 2579 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_D2.5mm" H 7850 2550 50  0001 C CNN
+F 3 "~" H 7850 2550 50  0001 C CNN
+	1    7650 2550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6300 2750 7650 2750
+Wire Wire Line
+	7650 2750 7650 2550
+Wire Wire Line
+	6300 2550 6650 2550
+Text Label 6400 2550 0    50   ~ 0
+PB0
+Text Label 6400 2750 0    50   ~ 0
+PB2
+Wire Wire Line
+	7950 3300 8100 3300
+Wire Wire Line
+	6300 3550 6500 3550
+Wire Wire Line
+	6500 3550 6500 3650
+Wire Wire Line
+	6500 3650 7800 3650
+Text Notes 8550 3650 0    50   ~ 0
+Note: Use internal pullups for buttons
+Text HLabel 7800 3650 2    50   Input ~ 0
+INPUT_BUTTON_1
+Text HLabel 7800 4850 2    50   Input ~ 0
+INPUT_BUTTON_2
+$Comp
+L Device:R_US R7
+U 1 1 5C0A98EE
+P 2450 3900
+F 0 "R7" H 2200 3950 50  0000 C CNN
+F 1 "825k 1%" H 2200 3850 50  0000 C CNN
+F 2 "led_clock_custom_parts:R_0402_1005Metric_HandSoldering" V 2490 3890 50  0001 C CNN
+F 3 "~" H 2450 3900 50  0001 C CNN
+	1    2450 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R8
+U 1 1 5C0A9D4F
+P 2450 4300
+F 0 "R8" H 2200 4350 50  0000 C CNN
+F 1 "107k 1%" H 2200 4250 50  0000 C CNN
+F 2 "led_clock_custom_parts:R_0402_1005Metric_HandSoldering" V 2490 4290 50  0001 C CNN
+F 3 "~" H 2450 4300 50  0001 C CNN
+	1    2450 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L led_clock_custom_parts:VEXT #PWR046
+U 1 1 5C0AAFC5
+P 2450 3700
+F 0 "#PWR046" H 2450 3550 50  0001 C CNN
+F 1 "VEXT" H 2450 3874 50  0000 C CNN
+F 2 "" H 2450 3700 50  0000 C CNN
+F 3 "" H 2450 3700 50  0000 C CNN
+	1    2450 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR047
+U 1 1 5C0AB095
+P 2450 4500
+F 0 "#PWR047" H 2450 4250 50  0001 C CNN
+F 1 "GND" H 2450 4350 50  0000 C CNN
+F 2 "" H 2450 4500 50  0000 C CNN
+F 3 "" H 2450 4500 50  0000 C CNN
+	1    2450 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R12
+U 1 1 5C0AB31B
+P 2450 5700
+F 0 "R12" H 2200 5750 50  0000 C CNN
+F 1 "825k 1%" H 2200 5650 50  0000 C CNN
+F 2 "led_clock_custom_parts:R_0402_1005Metric_HandSoldering" V 2490 5690 50  0001 C CNN
+F 3 "~" H 2450 5700 50  0001 C CNN
+	1    2450 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R11
+U 1 1 5C0AB39B
+P 2450 5300
+F 0 "R11" H 2200 5350 50  0000 C CNN
+F 1 "464k 1%" H 2200 5250 50  0000 C CNN
+F 2 "led_clock_custom_parts:R_0402_1005Metric_HandSoldering" V 2490 5290 50  0001 C CNN
+F 3 "~" H 2450 5300 50  0001 C CNN
+	1    2450 5300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2450 5550 2450 5500
+Wire Wire Line
+	2450 4500 2450 4450
+Wire Wire Line
+	2450 4050 2450 4100
+Wire Wire Line
+	2450 3700 2450 3750
+Connection ~ 2450 4100
+Wire Wire Line
+	2450 4100 2450 4150
+$Comp
+L power:GND #PWR050
+U 1 1 5C0B0C82
+P 2450 5900
+F 0 "#PWR050" H 2450 5650 50  0001 C CNN
+F 1 "GND" H 2450 5750 50  0000 C CNN
+F 2 "" H 2450 5900 50  0000 C CNN
+F 3 "" H 2450 5900 50  0000 C CNN
+	1    2450 5900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2450 5900 2450 5850
+$Comp
+L led_clock_custom_parts:VUSB_5V0 #PWR048
+U 1 1 5C0B21C6
+P 2450 5100
+F 0 "#PWR048" H 2450 4950 50  0001 C CNN
+F 1 "VUSB_5V0" H 2450 5274 50  0000 C CNN
+F 2 "" H 2450 5100 50  0000 C CNN
+F 3 "" H 2450 5100 50  0000 C CNN
+	1    2450 5100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2450 5100 2450 5150
+Text Notes 1750 6250 0    50   ~ 0
+5V * (825 / (825 + 464)) = 3.2V
+Text Notes 1750 4800 0    50   ~ 0
+28V * (107 / (107 + 825)) = 3.2V
+Connection ~ 2450 5500
+Wire Wire Line
+	2450 5500 2450 5450
+Wire Wire Line
+	4900 2750 4900 4100
+Connection ~ 3250 4100
+Wire Wire Line
+	3250 4100 4900 4100
+Wire Wire Line
+	5000 2850 5000 5500
+Connection ~ 3250 5500
+Wire Wire Line
+	3250 5500 5000 5500
+Text Notes 1200 4250 0    50   ~ 0
+VEXT and VUSB\ndetection and\nmeasurement
+Wire Wire Line
+	6300 3150 7750 3150
+Wire Wire Line
+	6700 3450 7750 3450
+Text Notes 7250 7150 0    200  ~ 40
+Microcontroller
+Text Notes 3400 4750 0    50   ~ 0
+Desolder the resistor divider\nif an ADC is desired for an\nalternative purpose
+Wire Wire Line
+	2450 4100 3250 4100
+Wire Wire Line
+	2450 5500 3250 5500
+Wire Wire Line
+	6300 4750 6400 4750
+Wire Wire Line
+	6400 4750 6400 4850
+Wire Wire Line
+	6400 4850 7800 4850
+Wire Wire Line
+	6300 4250 6600 4250
+Wire Wire Line
+	6600 4250 6600 4350
+Wire Wire Line
+	6600 4350 6800 4350
+Wire Wire Line
+	6300 3650 6400 3650
+Wire Wire Line
+	6400 3650 6400 3750
+Wire Wire Line
+	6400 3750 7100 3750
+$EndSCHEMATC
