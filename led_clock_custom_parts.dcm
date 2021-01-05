@@ -1,0 +1,42 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP Crystal
+D Two pin crystal
+K Quartz, Ceramic, Filter, Resonator
+$ENDCMP
+#
+$CMP FT232R
+D IC USB FS SERIAL UART
+$ENDCMP
+#
+$CMP MPM3620A
+D DC DC CONVERTER 0.8-19.9V
+$ENDCMP
+#
+$CMP PTC
+D PTC Thermistor
+K R Resistor Thermistor PTC Positive Temperature Coefficient Fuse
+$ENDCMP
+#
+$CMP Resonator
+D Resonator with Integrated Capacitors
+K Ceramic, Crystal, Resonator
+$ENDCMP
+#
+$CMP VDD_3V3
+K POWER, PWR
+$ENDCMP
+#
+$CMP VDD_MICRO_3V2
+K POWER, PWR
+$ENDCMP
+#
+$CMP VEXT
+K POWER, PWR
+$ENDCMP
+#
+$CMP VUSB_5V0
+K POWER, PWR
+$ENDCMP
+#
+#End Doc Library
